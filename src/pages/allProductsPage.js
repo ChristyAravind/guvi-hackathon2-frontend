@@ -21,16 +21,16 @@ export default function AllProductsPage() {
         setError(err.message);
       }
     };
-    const postData = async () => {
-      try {
-        const { data } = await axios.post(
-          "https://equipment-rent-app.herokuapp.com/createProducts"
-        );
-        console.log(data);
-      } catch (err) {
-        setError(err.message);
-      }
-    };
+    // const postData = async () => {
+    //   try {
+    //     const { data } = await axios.post(
+    //       "https://equipment-rent-app.herokuapp.com/createProducts"
+    //     );
+    //     console.log(data);
+    //   } catch (err) {
+    //     setError(err.message);
+    //   }
+    // };
     //postData
     fetchData();
   }, []);
