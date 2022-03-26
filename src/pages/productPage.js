@@ -7,7 +7,6 @@ import "react-datepicker/dist/react-datepicker.css";
 export default function ProductPage(props) {
   const { onAdd } = props;
   const [products, setProducts] = useState([]);
-  const [error, setError] = useState(false);
   const [qty, setQty] = useState(1);
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
@@ -33,7 +32,7 @@ export default function ProductPage(props) {
         );
         setProducts(data);
       } catch (err) {
-        setError(err.message);
+        console.log(err.message);
       }
     };
     fetchData();
