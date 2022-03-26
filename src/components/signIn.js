@@ -12,7 +12,7 @@ export default function SignIn(props) {
   let handleSubmit = async (e) => {
     e.preventDefault();
     const data = await axios.post(
-      `https://equipment-hiring.herokuapp.com/signin`,
+      `https://equipment-rent-app.herokuapp.com/signin`,
       { username, password }
     );
     setmessage(data.data.message);
@@ -46,7 +46,7 @@ export default function SignIn(props) {
             placeholder="email id"
           />
           <input
-            type="text"
+            type="password"
             id="password"
             class="fadeIn third"
             name="login"

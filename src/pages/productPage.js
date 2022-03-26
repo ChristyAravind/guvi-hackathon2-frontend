@@ -29,7 +29,7 @@ export default function ProductPage(props) {
     const fetchData = async () => {
       try {
         const { data } = await axios.get(
-          "https://equipment-hiring.herokuapp.com/products"
+          "https://equipment-rent-app.herokuapp.com/products"
         );
         setProducts(data);
       } catch (err) {

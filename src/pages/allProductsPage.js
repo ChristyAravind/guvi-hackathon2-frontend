@@ -12,7 +12,7 @@ export default function AllProductsPage() {
     const fetchData = async () => {
       try {
         const { data } = await axios.get(
-          "https://equipment-hiring.herokuapp.com/products"
+          "https://equipment-rent-app.herokuapp.com/products"
         );
         console.log(data);
         setProducts(data);
@@ -21,16 +21,17 @@ export default function AllProductsPage() {
         setError(err.message);
       }
     };
-    //    const postData = async () => {
-    //       try{
-    //          const {data} = await axios.post('https://equipment-hiring.herokuapp.com/createProducts');
-    //          console.log(data)
-    //    }catch(err){
-    // setError(err.message)
-    //    }
-
-    //    };
-    //postData();
+    const postData = async () => {
+      try {
+        const { data } = await axios.post(
+          "https://equipment-rent-app.herokuapp.com/createProducts"
+        );
+        console.log(data);
+      } catch (err) {
+        setError(err.message);
+      }
+    };
+    //postData
     fetchData();
   }, []);
 

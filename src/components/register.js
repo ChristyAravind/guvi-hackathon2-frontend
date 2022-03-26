@@ -14,7 +14,7 @@ export default function Register(props) {
     if (password === confirmpassword) {
       seterror("");
       const data = await axios.post(
-        `https://equipment-hiring.herokuapp.com/register`,
+        `https://equipment-rent-app.herokuapp.com/register`,
         { username, password }
       );
       setSuccess(data.data.message);
@@ -55,7 +55,7 @@ export default function Register(props) {
             required
           />
           <input
-            type="text"
+            type="password"
             id="password"
             class="fadeIn third"
             name="login"
@@ -65,7 +65,7 @@ export default function Register(props) {
             required
           />
           <input
-            type="text"
+            type="password"
             id="confirmpassword"
             class="fadeIn third"
             name="login"
