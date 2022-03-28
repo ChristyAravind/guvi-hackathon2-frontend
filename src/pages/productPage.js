@@ -3,10 +3,12 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { useParams } from "react-router-dom";
 
 export default function ProductPage(props) {
+  const { id } = useParams();
   const { onAdd } = props;
-  const [products, setProducts] = useState([]);
+  const [product, setProducts] = useState([]);
   const [qty, setQty] = useState(1);
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
@@ -28,7 +30,7 @@ export default function ProductPage(props) {
     const fetchData = async () => {
       try {
         const { data } = await axios.get(
-          "https://equipment-rent-app.herokuapp.com/products"
+          `https://equipment-rent-app.herokuapp.com/products/${id}`
         );
         setProducts(data);
       } catch (err) {
@@ -36,10 +38,14 @@ export default function ProductPage(props) {
       }
     };
     fetchData();
-  }, [endDate]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
 
-  const product = products.find((i) => i.id === props.match.params.id);
+  console.log(product);
 
+  // const product = products.find((i) => i.id === id);
+
+  // console.log(product);
   if (!product) {
     return (
       <div>

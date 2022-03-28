@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 export default function Product(props) {
   const { product } = props;
   return (
@@ -9,11 +8,11 @@ export default function Product(props) {
       class="col-sm-4 col-sm-offset-2 card"
       style={{ width: "18rem", margin: "0 10px 10px 10px" }}
     >
-      <Link to={`/product/${product.id}`}>
+      <Link to={`/product/${product._id}`}>
         <img className="card-img-top" src={product.image} alt={product.name} />
       </Link>
       <div class="card-body">
-        <Link to={`/product/${product.id}`}>
+        <Link to={`/product/${product._id}`}>
           <h6>{product.name}</h6>
         </Link>
         <div className="price">

@@ -52,7 +52,7 @@ export default function CartPage(props) {
                   <div className="col-sm-2">
                     <button
                       onClick={() => onRemove(item)}
-                      className="btn btn-primary"
+                      className="btn btn-warning"
                     >
                       Remove
                     </button>

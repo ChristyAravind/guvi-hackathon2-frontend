@@ -63,10 +63,10 @@ export default function AllProductsPage() {
               ? products
                   .filter((product) => product.type === category)
                   .map((product) => (
-                    <Product key={product.id} product={product}></Product>
+                    <Product key={product.id} product={product} />
                   ))
               : products.map((product) => (
-                  <Product key={product.id} product={product}></Product>
+                  <Product key={product.id} product={product} />
                 ))}
           </div>
         </div>
